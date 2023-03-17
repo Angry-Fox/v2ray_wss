@@ -600,10 +600,19 @@ if [[ $netstack == "6" ]]; then
     echo "Telegram电报是直接访问IPv4地址的, 需要IPv4出站的能力"
     echo "----------------------------------------------------------------"
     pause
-
+    
     # 安装 WARP IPv4
-    # bash <(curl -L git.io/warp.sh) 4
-    bash <(curl -L https://raw.githubusercontent.com/P3TERX/warp.sh/main/warp.sh) 4
+    echo "请选择想要使用的WARP安装脚本，如果不懂，请直接回车"
+    read -p "$(echo -e "Input ${cyan}1${none} for P3TERX, ${cyan}2${none} for FSCARMEN, ${cyan}3${none} for WARP-GO:") " warp_version
+    if [[ $warp_version == "3" ]]; then
+        bash <(curl -oL ./warp-go.sh https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh)
+    elif [[ $warp_version == "2" ]]; then
+        bash <(curl -oL ./menu.sh https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh)
+    else
+        # bash <(curl -L git.io/warp.sh) 4
+        bash <(curl -oL ./warp.sh https://raw.githubusercontent.com/P3TERX/warp.sh/main/warp.sh) 4
+    fi
+    
 
     # 重启 V2Ray
     echo
@@ -629,8 +638,16 @@ elif  [[ $netstack == "4" ]]; then
     pause
 
     # 安装 WARP IPv6
-    # bash <(curl -L git.io/warp.sh) 6
-    bash <(curl -L https://raw.githubusercontent.com/P3TERX/warp.sh/main/warp.sh) 6
+    echo "请选择想要使用的WARP安装脚本，如果不懂，请直接回车"
+    read -p "$(echo -e "Input ${cyan}1${none} for P3TERX, ${cyan}2${none} for FSCARMEN, ${cyan}3${none} for WARP-GO:") " warp_version
+    if [[ $warp_version == "3" ]]; then
+        bash <(curl -oL ./warp-go.sh https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh)
+    elif [[ $warp_version == "2" ]]; then
+        bash <(curl -oL ./menu.sh https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh)
+    else
+        # bash <(curl -L git.io/warp.sh) 6
+        bash <(curl -oL ./warp.sh https://raw.githubusercontent.com/P3TERX/warp.sh/main/warp.sh) 6
+    fi
 
     # 重启 V2Ray
     echo
