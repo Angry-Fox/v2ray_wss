@@ -457,7 +457,7 @@ echo "----------------------------------------------------------------"
 cat >/etc/caddy/Caddyfile <<-EOF
 $domain
 {
-    tls Y3JhenlwZWFjZQ@gmail.com
+    tls angryfox2023@163.com
     encode gzip
 
 #    多用户 多path
