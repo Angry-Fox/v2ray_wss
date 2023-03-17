@@ -605,12 +605,12 @@ if [[ $netstack == "6" ]]; then
     echo "请选择想要使用的WARP安装脚本，如果不懂，请直接回车"
     read -p "$(echo -e "Input ${cyan}1${none} for P3TERX, ${cyan}2${none} for FSCARMEN, ${cyan}3${none} for WARP-GO:") " warp_version
     if [[ $warp_version == "3" ]]; then
-        bash <(curl -oL ./warp-go.sh https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh)
+        bash <(curl -L https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh -o ./warp-go.sh && chmod +x warp-go.sh)
     elif [[ $warp_version == "2" ]]; then
-        bash <(curl -oL ./menu.sh https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh)
+        bash <(curl -L https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh -o ./menu.sh && chmod +x menu.sh)
     else
         # bash <(curl -L git.io/warp.sh) 4
-        bash <(curl -oL ./warp.sh https://raw.githubusercontent.com/P3TERX/warp.sh/main/warp.sh) 4
+        bash <(curl -L https://raw.githubusercontent.com/P3TERX/warp.sh/main/warp.sh -o ./warp.sh && chmod +x warp.sh) 4
     fi
     
 
@@ -641,12 +641,12 @@ elif  [[ $netstack == "4" ]]; then
     echo "请选择想要使用的WARP安装脚本，如果不懂，请直接回车"
     read -p "$(echo -e "Input ${cyan}1${none} for P3TERX, ${cyan}2${none} for FSCARMEN, ${cyan}3${none} for WARP-GO:") " warp_version
     if [[ $warp_version == "3" ]]; then
-        bash <(curl -oL ./warp-go.sh https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh)
+        bash <(curl -L https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh -o ./warp-go.sh && chmod +x warp-go.sh)
     elif [[ $warp_version == "2" ]]; then
-        bash <(curl -oL ./menu.sh https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh)
+        bash <(curl -L https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh -o ./menu.sh && chmod +x menu.sh)
     else
         # bash <(curl -L git.io/warp.sh) 6
-        bash <(curl -oL ./warp.sh https://raw.githubusercontent.com/P3TERX/warp.sh/main/warp.sh) 6
+        bash <(curl -L https://raw.githubusercontent.com/P3TERX/warp.sh/main/warp.sh -o ./warp.sh && chmod +x warp.sh) 6
     fi
 
     # 重启 V2Ray
